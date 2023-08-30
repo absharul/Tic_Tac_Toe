@@ -1,6 +1,7 @@
 package com.example.tictactoe
 
 import android.annotation.SuppressLint
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -15,8 +16,11 @@ import kotlinx.coroutines.delay
 
 class MainActivity : AppCompatActivity() {
 
-//    private lateinit var mediaPlayerO: MediaPlayer;
-//    private lateinit var mediaPlayerX: MediaPlayer
+    private lateinit var mediaPlayerO: MediaPlayer
+    private lateinit var mediaPlayerX: MediaPlayer
+    private lateinit var mediaWinO: MediaPlayer
+    private lateinit var mediaWinX: MediaPlayer
+    private lateinit var mediaDecwin: MediaPlayer
     //binding
     private lateinit var binding : ActivityMainBinding
     //Determining the turn of the first and second person
@@ -40,8 +44,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-//        mediaPlayerO = MediaPlayer.create(this, R.raw.so)
-//        mediaPlayerX = MediaPlayer.create(this, R.raw.sx)
+        mediaPlayerO = MediaPlayer.create(this, R.raw.osound)
+        mediaPlayerX = MediaPlayer.create(this, R.raw.xsound)
+        mediaWinO = MediaPlayer.create(this,R.raw.uiiiiiiii)
+        mediaWinX = MediaPlayer.create(this, R.raw.uiiiiiiii)
+        mediaDecwin = MediaPlayer.create(this,R.raw.levelpass)
 
     }
 
@@ -59,7 +66,7 @@ class MainActivity : AppCompatActivity() {
                 {
                     0 ->{
                         //The turn is for the first plyer
-                      //  mediaPlayerO.start()
+                        mediaPlayerO.start()
                         btn.setImageResource(R.drawable.ic_o)
                         btn.tag = TAG_O
                         //Displaying the green border
@@ -70,7 +77,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     1 ->{
                         //The turn is for the first player
-                      //  mediaPlayerX.start()
+                        mediaPlayerX.start()
                         btn.setImageResource(R.drawable.ic_x)
                         btn.tag = TAG_X
                         //Displaying the green border
@@ -128,6 +135,7 @@ class MainActivity : AppCompatActivity() {
                         {
                             //if all the tiles are filled and there is no winner , we empty the tiles for new game
                             Toast.makeText(this@MainActivity , "This game has no winner" , Toast.LENGTH_SHORT).show()
+
                             newGame()
                         }
                 }
@@ -139,9 +147,9 @@ class MainActivity : AppCompatActivity() {
     {
         //changing the color of the correct tiles to green one by one
         viewOne.setBackgroundResource(R.drawable.board_back_green)
-        delay(200)
+        delay(300)
         viewTwo.setBackgroundResource(R.drawable.board_back_green)
-        delay(200)
+        delay(300)
         viewThree.setBackgroundResource(R.drawable.board_back_green)
         newGame()
     }
@@ -154,15 +162,23 @@ class MainActivity : AppCompatActivity() {
         {
             TAG_X->{
                 //getting the current score of user x
+                mediaWinX.start()
                 val xPoint = binding.boardXCount.text.toString().toInt()
                 //Increasing the score
                 binding.boardXCount.text = (xPoint + 1).toString()
+                if(xPoint == 9){
+                    mediaDecwin.start()
+                }
             }
             TAG_O ->{
                 //getting the current score of user o
+                mediaWinO.start()
                 val oPoint = binding.boardOCount.text.toString().toInt()
                 //Increasing the score
                 binding.boardOCount.text = (oPoint + 1).toString()
+                if(oPoint == 9){
+                    mediaDecwin.start()
+                }
             }
             TAG_RESET ->{
                 //resetting the score of both users on the panel
