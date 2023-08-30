@@ -15,6 +15,8 @@ import kotlinx.coroutines.delay
 
 class MainActivity : AppCompatActivity() {
 
+//    private lateinit var mediaPlayerO: MediaPlayer;
+//    private lateinit var mediaPlayerX: MediaPlayer
     //binding
     private lateinit var binding : ActivityMainBinding
     //Determining the turn of the first and second person
@@ -38,6 +40,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+//        mediaPlayerO = MediaPlayer.create(this, R.raw.so)
+//        mediaPlayerX = MediaPlayer.create(this, R.raw.sx)
+
     }
 
     fun oxClick(view : View)
@@ -53,7 +58,8 @@ class MainActivity : AppCompatActivity() {
                 when(flag)
                 {
                     0 ->{
-                        //The turn is for the first player
+                        //The turn is for the first plyer
+                      //  mediaPlayerO.start()
                         btn.setImageResource(R.drawable.ic_o)
                         btn.tag = TAG_O
                         //Displaying the green border
@@ -64,6 +70,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     1 ->{
                         //The turn is for the first player
+                      //  mediaPlayerX.start()
                         btn.setImageResource(R.drawable.ic_x)
                         btn.tag = TAG_X
                         //Displaying the green border
@@ -174,7 +181,7 @@ class MainActivity : AppCompatActivity() {
         binding.grid.children.filterIsInstance<ImageView>().forEach { iv ->
             iv.setImageDrawable(null)
             iv.tag = null
-            iv.setBackgroundResource(R.drawable.board_back)
+            iv.setBackgroundResource(R.drawable.cg_back)
         }
         //Adding a green border to the user whose turn it is to play
         binding.cardO.strokeWidth = 2

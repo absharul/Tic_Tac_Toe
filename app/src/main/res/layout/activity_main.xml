@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#191B1F"
+    android:background="#0B3032"
     android:id="@+id/layoutMain"
     tools:context=".MainActivity">
 
@@ -14,9 +14,9 @@
         android:id="@+id/tvHeader"
         android:layout_marginTop="30dp"
         android:text="@string/xo_game"
-        android:fontFamily="@font/montserrat_black"
+        android:fontFamily="@font/nicomoji"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="26sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -26,29 +26,33 @@
         android:layout_width="105dp"
         android:layout_height="200dp"
         android:id="@+id/cardO"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="2dp"
         android:layout_marginStart="30dp"
-        app:cardBackgroundColor="#37474F"
+        app:cardBackgroundColor="#D9D9D9"
         app:cardCornerRadius="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvHeader"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grid"
         app:strokeWidth="2dp"
         app:strokeColor="#B2FF59">
-        
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+
             <ImageView
                 android:id="@+id/boardO"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_width="98dp"
+                android:layout_height="73dp"
+                android:layout_marginTop="16dp"
                 android:src="@drawable/ic_o"
+                app:layout_constraintBaseline_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBaseline_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
-            
             <TextView
                 android:id="@+id/boardOCount"
                 android:layout_width="match_parent"
@@ -56,10 +60,10 @@
                 android:fontFamily="@font/montserrat_black"
                 android:gravity="center"
                 android:text="@string/_0"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="50dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/boardO"/>
+                app:layout_constraintTop_toBottomOf="@+id/boardO" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
@@ -68,26 +72,28 @@
         android:layout_width="105dp"
         android:layout_height="200dp"
         android:id="@+id/cardX"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="30dp"
-        app:cardBackgroundColor="#37474F"
+        app:cardBackgroundColor="#D9D9D9"
         app:cardCornerRadius="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvHeader"
+        app:layout_constraintTop_toBottomOf="@+id/grid"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:strokeWidth="0dp"
         app:strokeColor="#B2FF59">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <ImageView
                 android:id="@+id/boardX"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="98dp"
+                android:layout_height="73dp"
                 android:layout_marginTop="20dp"
                 android:src="@drawable/ic_x"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
             android:id="@+id/boardXCount"
@@ -96,7 +102,7 @@
             android:fontFamily="@font/montserrat_black"
             android:gravity="center"
             android:text="@string/_0"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="50sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/boardX"/>
@@ -130,7 +136,7 @@
         android:rowCount="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardX"
+        app:layout_constraintTop_toBottomOf="@id/tvHeader"
         app:layout_constraintDimensionRatio="1:1">
 
         <ImageView
@@ -140,7 +146,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
-            android:background="@drawable/board_back"
+            android:background="@drawable/cg_back"
             android:onClick="oxClick"/>
 
         <ImageView
@@ -150,7 +156,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
-            android:background="@drawable/board_back"
+            android:background="@drawable/cg_back"
             android:onClick="oxClick"/>
 
         <ImageView
@@ -160,7 +166,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
-            android:background="@drawable/board_back"
+            android:background="@drawable/cg_back"
             android:onClick="oxClick"/>
 
         <ImageView
@@ -170,7 +176,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
-            android:background="@drawable/board_back"
+            android:background="@drawable/cg_back"
             android:onClick="oxClick"/>
 
         <ImageView
@@ -180,7 +186,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
-            android:background="@drawable/board_back"
+            android:background="@drawable/cg_back"
             android:onClick="oxClick"/>
         <ImageView
             android:id="@+id/iv6"
@@ -189,7 +195,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
-            android:background="@drawable/board_back"
+            android:background="@drawable/cg_back"
             android:onClick="oxClick"/>
         <ImageView
             android:id="@+id/iv7"
@@ -198,7 +204,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
-            android:background="@drawable/board_back"
+            android:background="@drawable/cg_back"
             android:onClick="oxClick"/>
         <ImageView
             android:id="@+id/iv8"
@@ -207,7 +213,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
-            android:background="@drawable/board_back"
+            android:background="@drawable/cg_back"
             android:onClick="oxClick"/>
         <ImageView
             android:id="@+id/iv9"
@@ -216,21 +222,27 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
-            android:background="@drawable/board_back"
+            android:background="@drawable/cg_back"
             android:onClick="oxClick"/>
 
     </GridLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="70dp"
-        android:layout_height="70dp"
         android:id="@+id/btnReset"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
         android:layout_marginVertical="5dp"
-        android:background="@drawable/btn_reset"
+        android:background="@drawable/reset_corner"
+        android:fontFamily="@font/nicomoji"
+        android:text="RESET"
+        android:textAlignment="center"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/grid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvVs"
+        app:layout_constraintVertical_bias="0.737" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
