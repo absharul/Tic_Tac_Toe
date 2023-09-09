@@ -1,0 +1,14 @@
+<!-- res/drawable/board_background.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background rectangle (represents the game board) -->
+    <item>
+        <shape android:shape="rectangle">
+            <!-- Board background color (you can customize this) -->
+            <solid android:color="#FFFFFF" />
+            <!-- Optional: Add a border around the board -->
+            <stroke
+                android:width="2dp"
+                android:color="#000000" />
+        </shape>
+    </item>
+</layer-list>

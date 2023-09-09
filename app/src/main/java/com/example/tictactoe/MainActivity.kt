@@ -1,6 +1,7 @@
 package com.example.tictactoe
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -21,6 +22,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mediaWinO: MediaPlayer
     private lateinit var mediaWinX: MediaPlayer
     private lateinit var mediaDecwin: MediaPlayer
+
+
+
     //binding
     private lateinit var binding : ActivityMainBinding
     //Determining the turn of the first and second person
@@ -43,6 +47,7 @@ class MainActivity : AppCompatActivity() {
                 newGame()
             }
         }
+
 
         mediaPlayerO = MediaPlayer.create(this, R.raw.osound)
         mediaPlayerX = MediaPlayer.create(this, R.raw.xsound)
