@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardCornerRadius="10dp"
+    app:strokeColor="#38F21A"
+    app:strokeWidth="2dp"
+    app:cardBackgroundColor="@color/black"
+    android:padding="16dp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="250dp"
+        android:layout_height="90dp"
+        android:orientation="vertical"
+        >
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:layout_height="wrap_content"
+            android:hint="Username"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDone"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:background="@drawable/reset_corner"
+            android:fontFamily="@font/nicomoji"
+            android:text="done"
+            android:layout_gravity="center"
+            android:backgroundTint="#38F21A"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
