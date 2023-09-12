@@ -18,7 +18,7 @@
         >
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/user_editText"
             android:layout_width="match_parent"
             android:textColor="@color/white"
             android:textColorHint="@color/white"

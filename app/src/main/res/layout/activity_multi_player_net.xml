@@ -48,7 +48,19 @@
 
     <!-- Add a ListView to display the devices -->
 
-    <ListView
+<!--    <ListView-->
+<!--        android:id="@+id/show_ListView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="140dp"-->
+<!--        android:layout_marginBottom="300dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/btnStart"-->
+<!--        tools:layout_editor_absoluteX="-16dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent">      -->
+<!--    </ListView>-->
+
+    <LinearLayout
+        android:gravity="center_vertical"
         android:id="@+id/show_ListView"
         android:layout_width="match_parent"
         android:layout_height="140dp"
@@ -56,7 +68,27 @@
         app:layout_constraintBottom_toTopOf="@id/btnStart"
         tools:layout_editor_absoluteX="-16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical">
+
+
+    <!-- Defining where should text be placed. You set you text color here-->
+        <TextView
+            android:layout_gravity="top"
+            android:id="@+id/list_contenthost"
+            android:layout_width="fill_parent"
+            android:layout_height="70dp"
+            android:gravity="center"
+            android:textColor="#38F21A" />
+        <TextView
+            android:layout_gravity="bottom"
+            android:id="@+id/list_contentjoin"
+            android:layout_width="fill_parent"
+            android:layout_height="70dp"
+            android:gravity="center"
+            android:textColor="#38F21A" />
+
+    </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnStart"
@@ -77,13 +109,13 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_back"
-        android:layout_width="35dp"
+        android:layout_width="40dp"
         android:layout_height="35dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/baseline_arrow_back_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="350dp"
+        android:layout_marginEnd="345dp"
         app:layout_constraintTop_toTopOf="parent"
         />
 
