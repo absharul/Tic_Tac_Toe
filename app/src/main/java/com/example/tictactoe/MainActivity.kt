@@ -1,18 +1,18 @@
 package com.example.tictactoe
 
 import android.annotation.SuppressLint
-import android.content.Context
+import android.content.Intent
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.children
 import androidx.lifecycle.lifecycleScope
 import com.example.tictactoe.databinding.ActivityMainBinding
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 class MainActivity : AppCompatActivity() {
@@ -54,6 +54,13 @@ class MainActivity : AppCompatActivity() {
         mediaWinO = MediaPlayer.create(this,R.raw.uiiiiiiii)
         mediaWinX = MediaPlayer.create(this, R.raw.uiiiiiiii)
         mediaDecwin = MediaPlayer.create(this,R.raw.levelpass)
+
+
+        binding.btnBack.setOnClickListener {
+            startActivity(Intent(this,StartActiivity::class.java))
+            finish()
+        }
+
 
     }
 

@@ -43,6 +43,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnHost" />
 
+    <!-- Add a TextView to display the list of devices -->
+
+
+    <!-- Add a ListView to display the devices -->
 
     <ListView
         android:id="@+id/show_ListView"
@@ -70,6 +74,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
          />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_back"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="350dp"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
 
 
 

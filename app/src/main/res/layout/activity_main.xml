@@ -235,6 +235,7 @@
         android:layout_height="40dp"
         android:layout_marginVertical="5dp"
         android:background="@drawable/reset_corner"
+        android:backgroundTint="#38F21A"
         android:fontFamily="@font/nicomoji"
         android:text="RESET"
         android:textColor="@color/black"
@@ -246,6 +247,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvVs"
         app:layout_constraintVertical_bias="0.737" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_back"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="350dp"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
